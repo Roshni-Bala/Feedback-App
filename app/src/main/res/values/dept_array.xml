@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dept_string_val">Department</string>
+    <string-array name="dept_array_values">
+        <item>CSE</item>
+        <item>IT</item>
+        <item>EEE</item>
+        <item>ECE</item>
+        <item>Mechanical</item>
+        <item>Civil</item>
+    </string-array>
+</resources>
