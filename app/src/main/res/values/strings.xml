@@ -9,4 +9,8 @@
     <string name="txt_name1">Full Name:</string>
     <string name="text_dept">Department:</string>
     <string name="txt_year">Year of Study:</string>
+    <string name="txt_fb">Hi! Enter your feedback:</string>
+    <string name="txt_rate">How much would you rate the event?</string>
+    <string name="txt_thankyou">Thank you for completing your feedback!</string>
+    <string name="btn_homepage">Home</string>
 </resources>

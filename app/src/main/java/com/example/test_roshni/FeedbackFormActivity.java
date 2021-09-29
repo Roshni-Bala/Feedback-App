@@ -2,6 +2,7 @@ package com.example.test_roshni;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.view.View;
@@ -41,10 +42,19 @@ public class FeedbackFormActivity extends AppCompatActivity{
                 user_name = String.valueOf(usernametext.getText());
                 user_phone = String.valueOf(userphonetext.getText());
                 user_email = String.valueOf(useremailtext.getText());
-                ConnectMySql connectMySql_db = new ConnectMySql();
-                connectMySql_db.execute("");
+//                ConnectMySql connectMySql_db = new ConnectMySql();
+//                connectMySql_db.execute("");
+                if(usernametext!=null){
+                    Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
+                    startActivity(intent2);
+                }
+                else{
+                    Toast.makeText(FeedbackFormActivity.this, "Please fill in the details.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
+
 
     }
     private class ConnectMySql extends AsyncTask<String, Void, String> {
@@ -60,13 +70,13 @@ public class FeedbackFormActivity extends AppCompatActivity{
         @Override
         protected String doInBackground(String... params) {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
+                Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection(url, user, pass);
                 System.out.println("Databaseection success");
 
                 String result = "Database Connection Successful\n";
                 Statement st = con.createStatement();
-                int rs = st.executeUpdate("INSERT INTO `feedbackpage`(`fb_name`, `fb_email`, `fb_phone`) VALUES('"+user_name+"','"+user_email+"','"+user_phone+"');");
+                int rs = st.executeUpdate("INSERT INTO `feedbacktable`(`name`, `email`, `phone`) VALUES('"+user_name+"','"+user_email+"','"+user_phone+"');");
 
                 res = result;
             } catch (Exception e) {
