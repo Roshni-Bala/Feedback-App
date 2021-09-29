@@ -12,6 +12,10 @@ import android.content.Intent;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String url = "jdbc:mysql://127.0.0.1:3306/feedbackdatabase";
+    public static final String user = "roshni";
+    public static final String pass = "12345";
+
     public Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
