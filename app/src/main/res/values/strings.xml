@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Feedback Form</string>
     <string name="startbtn">Let\'s Get Started!</string>
-    <string name="intro1">Fill in this form.</string>
+    <string name="intro1">Do you have feedback?</string>
     <string name="termsAndCond"><![CDATA[By proceeding, I agree to the T&C]]></string>
     <string name="btn_submit1">Submit</string>
     <string name="text_email1">Email:</string>
