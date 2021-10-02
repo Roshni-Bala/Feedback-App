@@ -11,20 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.Statement;
-//import android.os.AsyncTask;
-//import static com.example.test_roshni.MainActivity.pass;
-//import static com.example.test_roshni.MainActivity.url;
-//import static com.example.test_roshni.MainActivity.user;
-
 
 public class FeedbackFormActivity extends AppCompatActivity {
     Button btn_submit1;
     EditText usernametext, userphonetext, useremailtext;
     public String user_name, user_phone, user_email;
-//    public boolean success;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,67 +35,25 @@ public class FeedbackFormActivity extends AppCompatActivity {
                 user_phone = String.valueOf(userphonetext.getText());
                 user_email = String.valueOf(useremailtext.getText());
 
-//                ConnectMySql connectMySql_db = new ConnectMySql(); //db connection jdbc
-//                connectMySql_db.execute("");
 
-                if (user_name.length() != 0 && user_phone.length()!=0 && user_email.length()!=0) {
-                    if(isValidEmail(user_email)) {
+                if (user_name.length() != 0 && isValid(user_email, user_phone))
+                {
                         Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
-                        Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name + "!", Toast.LENGTH_SHORT).show();
                         startActivity(intent2);
-                    }else{Toast.makeText(FeedbackFormActivity.this, "Please enter a valid E-mail ID.", Toast.LENGTH_SHORT).show();}
-                } else if (user_name.length() == 0 || user_phone.length()==0 || user_email.length()==0) {
-                    Toast.makeText(FeedbackFormActivity.this, "Please enter details.", Toast.LENGTH_SHORT).show();
-                } else {
-                    System.out.println("**Error**");
+                }
+                else{
+                    Toast.makeText(FeedbackFormActivity.this, "Please enter valid details.", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
-
+    }
+    //validate email and phone number entered by user
+    public static boolean isValid(CharSequence user_email, CharSequence user_phone) {
+        return (!TextUtils.isEmpty(user_email) && Patterns.EMAIL_ADDRESS.matcher(user_email).matches() && user_phone.length() == 10 );
     }
 
-    //TODO: check how to validate using this function below
-        public static boolean isValidEmail(CharSequence user_email) {
-            return (!TextUtils.isEmpty(user_email) && Patterns.EMAIL_ADDRESS.matcher(user_email).matches());
-        }
-
 }
-//    private class ConnectMySql extends AsyncTask<String, Void, String> {
-//        String res = "";
-//
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//            Toast.makeText(FeedbackFormActivity.this, "Please wait...", Toast.LENGTH_SHORT).show();
-//
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... params) {
-//            try {
-//                Class.forName("com.mysql.jdbc.Driver");
-//                Connection con = DriverManager.getConnection(url, user, pass);
-//                System.out.println("Databaseection success");
-//
-//                String result = "Database Connection Successful\n";
-//                Statement st = con.createStatement();
-//                int rs = st.executeUpdate("INSERT INTO `feedbacktable`(`name`, `email`, `phone`) VALUES('"+user_name+"','"+user_email+"','"+user_phone+"');");
-//
-//                res = result;
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                res = e.toString();
-//            }
-//            return res;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result) {
-//            if(success){
-//                Toast.makeText(FeedbackFormActivity.this, "Submitted.", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        }
 
