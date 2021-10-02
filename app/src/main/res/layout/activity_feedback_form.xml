@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A9D8F3F3"
+    android:background="#A9C7CFFF"
     tools:context=".FeedbackFormActivity">
 
     <EditText
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="9xxxxxxxxx"
+        android:hint="9*********"
         android:inputType="phone"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/text_email1"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="johndoe@gmail.com"
+        android:hint="j*****@email.com"
         android:inputType="textEmailAddress"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,14 +58,14 @@
         android:id="@+id/btn_submit1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#00BCD4"
+        android:backgroundTint="#6460D1"
         android:text="@string/btn_submit1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/text_email1"
@@ -73,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/text_email1"
+        android:textColor="#292929"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_name1"
+        android:textColor="#292929"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/user_name1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_phone"
+        android:textColor="#292929"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/user_phone1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,23 +113,24 @@
     <Spinner
         android:id="@+id/spinner_department"
         android:layout_width="193dp"
-        android:layout_height="34dp"
+        android:layout_height="48dp"
         android:layout_marginTop="17dp"
         android:entries="@array/dept_array_values"
         android:spinnerMode="dropdown"
-        android:textSize="40sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dept"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <TextView
         android:id="@+id/txt_dept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_dept"
+        android:textColor="#292929"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,39 +141,43 @@
 
     <RadioGroup
         android:id="@+id/rad_year"
-        android:layout_width="195dp"
-        android:layout_height="157dp"
+        android:layout_width="185dp"
+        android:layout_height="196dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_department"
-        app:layout_constraintVertical_bias="0.385">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9">
 
         <RadioButton
             android:id="@+id/rad_One"
             android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:text="First Year" />
+            android:layout_height="48dp"
+            android:text="First Year"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rad_Two"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="48dp"
 
-            android:text="Second Year" />
+            android:text="Second Year"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rad_Three"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:text="Third Year" />
+            android:layout_height="48dp"
+            android:text="Third Year"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/rad_Four"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:text="Fourth Year" />
+            android:layout_height="48dp"
+            android:text="Fourth Year"
+            android:textSize="16sp" />
     </RadioGroup>
 
     <TextView
@@ -177,12 +185,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_year"
+        android:textColor="#292929"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.627" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

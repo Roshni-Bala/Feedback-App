@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#7ACDCBFF"
     tools:context=".enterfb">
 
     <EditText
@@ -11,7 +12,7 @@
         android:layout_width="288dp"
         android:layout_height="200dp"
         android:ems="10"
-        android:gravity="start|top"
+        android:gravity="center"
         android:hint="Enter your thoughts here"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +42,7 @@
         android:layout_height="59dp"
         android:max="4"
         android:progress="4"
+        android:progressTint="#8580FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +95,7 @@
         android:id="@+id/btn_finSubmit"
         android:layout_width="112dp"
         android:layout_height="58dp"
-        android:backgroundTint="#03A9F4"
+        android:backgroundTint="#6460D1"
         android:text="@string/btn_submit1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

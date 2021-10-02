@@ -48,9 +48,11 @@ public class FeedbackFormActivity extends AppCompatActivity {
 //                connectMySql_db.execute("");
 
                 if (user_name.length() != 0 && user_phone.length()!=0 && user_email.length()!=0) {
-                    Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
-                    Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name, Toast.LENGTH_SHORT).show();
-                    startActivity(intent2);
+                    if(isValidEmail(user_email)) {
+                        Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
+                        Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name, Toast.LENGTH_SHORT).show();
+                        startActivity(intent2);
+                    }else{Toast.makeText(FeedbackFormActivity.this, "Please enter a valid E-mail ID.", Toast.LENGTH_SHORT).show();}
                 } else if (user_name.length() == 0 || user_phone.length()==0 || user_email.length()==0) {
                     Toast.makeText(FeedbackFormActivity.this, "Please enter details.", Toast.LENGTH_SHORT).show();
                 } else {
