@@ -11,9 +11,9 @@
     <string name="txt_year">Year of Study:</string>
     <string name="txt_fb">Hi! Enter your feedback:</string>
     <string name="txt_rate">How much would you rate the event?</string>
-    <string name="txt_thankyou">Thank you for completing your feedback on Kanmani Discord Bot!</string>
+    <string name="txt_thankyou">Thank you for completing your feedback on \nKanmani Discord Bot!</string>
     <string name="btn_homepage">Return Home</string>
     <string name="btn_kanmani_website">Kanmani\'s Website</string>
     <string name="btn_kanmani_topgg">Bot on Top.gg</string>
-    <string name="btn_kanmani_supportserver">Kanmani\'s Support Server</string>
+    <string name="btn_kanmani_supportserver">GitHub Repo</string>
 </resources>
