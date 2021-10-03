@@ -9,13 +9,21 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
 public class FeedbackFormActivity extends AppCompatActivity {
     Button btn_submit1;
     EditText usernametext, userphonetext, useremailtext;
-    public String user_name, user_phone, user_email;
+    public String user_name, user_phone, user_email, user_dept;
+    int user_year_id;
+    Spinner spinner_department;
+    RadioGroup rad_year;
+    RadioButton user_rad_year;
+    CharSequence user_year_select;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,25 +34,32 @@ public class FeedbackFormActivity extends AppCompatActivity {
         usernametext = findViewById(R.id.user_name1);
         userphonetext = findViewById(R.id.user_phone1);
         useremailtext = findViewById(R.id.user_email1);
+        spinner_department = findViewById(R.id.spinner_department);
+
+        rad_year = findViewById(R.id.rad_year); //radiogrp ID
+
 
         btn_submit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                success = false;
                 user_name = String.valueOf(usernametext.getText());
                 user_phone = String.valueOf(userphonetext.getText());
                 user_email = String.valueOf(useremailtext.getText());
+                user_dept = String.valueOf(spinner_department.getSelectedItem());
 
+                user_year_id = rad_year.getCheckedRadioButtonId();//selected radio button by user ID
+                user_rad_year = (RadioButton) findViewById(user_year_id); //getting the checked rad button from grp ID
+                user_year_select = user_rad_year.getText(); //text of selected radio button
 
-                if (user_name.length() != 0 && isValid(user_email, user_phone))
-                {
-                        Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
-                        Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name + "!", Toast.LENGTH_SHORT).show();
-                        startActivity(intent2);
-                }
-                else{
-                    Toast.makeText(FeedbackFormActivity.this, "Please enter valid details.", Toast.LENGTH_SHORT).show();
-                }
+                    if (user_name.length() != 0 && isValid(user_email, user_phone))
+                    {
+                            Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
+                            Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name + "!", Toast.LENGTH_SHORT).show();
+                            startActivity(intent2);
+                    }
+                    else{
+                        Toast.makeText(FeedbackFormActivity.this, "Please enter valid details.", Toast.LENGTH_SHORT).show();
+                    }
 
             }
         });

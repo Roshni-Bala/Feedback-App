@@ -45,7 +45,7 @@ public class thankyouActivity extends AppCompatActivity {
         btn_k_git.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(thankyouActivity.this, "Opening Support Server on Discord.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(thankyouActivity.this, "Opening GitHub Repository.", Toast.LENGTH_SHORT).show();
                 GoToURL("https://github.com/Abhinand-and-Roshni/Kanmani-Discord-Bot");
             }
         });
