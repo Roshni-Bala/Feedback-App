@@ -18,7 +18,11 @@ import android.widget.Toast;
 public class FeedbackFormActivity extends AppCompatActivity {
     Button btn_submit1;
     EditText usernametext, userphonetext, useremailtext;
-    public String user_name, user_phone, user_email, user_dept, user_yr;
+    public String user_name;
+    public String user_phone;
+    public static String user_email;
+    public String user_dept;
+    public String user_yr;
     int user_year_id;
     Spinner spinner_department;
     RadioGroup rad_year;

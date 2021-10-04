@@ -7,8 +7,7 @@ public class NewUser {
     private String u_phone;
     private String u_year;
     private String u_dept;
-    private String u_fback;
-    private int u_rating;
+
 
     public NewUser(){
         //empty public constructor to pass data back and forth
@@ -19,23 +18,7 @@ public class NewUser {
         this.u_phone = u_phone;
         this.u_year = u_year;
         this.u_dept = u_dept;
-        this.u_fback = u_fback;
-    }
 
-    public String getU_fback() {
-        return u_fback;
-    }
-
-    public void setU_fback(String u_fback) {
-        this.u_fback = u_fback;
-    }
-
-    public int getU_rating() {
-        return u_rating;
-    }
-
-    public void setU_rating(int u_rating) {
-        this.u_rating = u_rating;
     }
 
     public String getU_name() {

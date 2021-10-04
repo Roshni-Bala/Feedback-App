@@ -12,9 +12,9 @@ import android.content.Intent;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String url = "jdbc:mysql://127.0.0.1:3306/feedbackdb";
-    public static final String user = "root";
-    public static final String pass = "";
+//    public static final String url = "jdbc:mysql://127.0.0.1:3306/feedbackdb";
+//    public static final String user = "root";
+//    public static final String pass = "";
 
     public Button button;
     @Override
