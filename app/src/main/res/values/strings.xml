@@ -16,4 +16,5 @@
     <string name="btn_kanmani_website">Kanmani\'s Website</string>
     <string name="btn_kanmani_topgg">Bot on Top.gg</string>
     <string name="btn_kanmani_supportserver">GitHub Repo</string>
+    <string name="txt_avgText">Avg Rating: </string>
 </resources>
