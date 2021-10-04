@@ -32,7 +32,6 @@ public class enterfb extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enterfb);
 
-
         btn_finSubmit = findViewById(R.id.btn_finSubmit);
         inptxt_feedback = findViewById(R.id.inptxt_feedback);
         seekbar_rate= findViewById(R.id.seekbar_rate); // initiate the Seek bar
@@ -45,8 +44,7 @@ public class enterfb extends AppCompatActivity {
                 user_rate= seekbar_rate.getProgress();
 
                 if (user_feedback.length() != 0) {
-
-                    NewUserFeedback u_fb = new NewUserFeedback( user_feedback, user_rate);
+                    NewUserFeedback u_fb = new NewUserFeedback(user_feedback, user_rate);
 
                     daofb.add(u_fb).addOnSuccessListener(suc->{
                         Toast.makeText(enterfb.this, "Success.", Toast.LENGTH_SHORT).show();

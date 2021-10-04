@@ -56,7 +56,6 @@ public class FeedbackFormActivity extends AppCompatActivity {
                 user_year_select = user_rad_year.getText(); //text of selected radio button
                 user_yr = user_year_select.toString();
 
-
                     if (user_name.length() != 0 && isValid(user_email, user_phone))
                     {
                         NewUser new_user = new NewUser(user_name, user_email, user_phone, user_yr , user_dept);

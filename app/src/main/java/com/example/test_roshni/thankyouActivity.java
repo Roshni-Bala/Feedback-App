@@ -50,7 +50,6 @@ public class thankyouActivity extends AppCompatActivity {
                 rateavg = (float)sum/count;
                 total_avg_rating.setText(String.valueOf(df.format(rateavg)));
 
-
             }
 
             @Override

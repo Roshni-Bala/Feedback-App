@@ -9,7 +9,6 @@ public class DAONewUserFeedback {
     public DAONewUserFeedback(){
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         databaseReference = db.getReference(NewUserFeedback.class.getSimpleName());
-
     }
     public Task<Void> add(NewUserFeedback u_fb){
         return databaseReference.push().setValue(u_fb);
