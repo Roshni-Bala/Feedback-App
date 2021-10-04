@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class FeedbackFormActivity extends AppCompatActivity {
     Button btn_submit1;
     EditText usernametext, userphonetext, useremailtext;
-    public String user_name, user_phone, user_email, user_dept;
+    public String user_name, user_phone, user_email, user_dept, user_yr;
     int user_year_id;
     Spinner spinner_department;
     RadioGroup rad_year;
@@ -37,7 +37,7 @@ public class FeedbackFormActivity extends AppCompatActivity {
         spinner_department = findViewById(R.id.spinner_department);
 
         rad_year = findViewById(R.id.rad_year); //radiogrp ID
-
+        DAONewUser dao = new DAONewUser();
 
         btn_submit1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,9 +50,18 @@ public class FeedbackFormActivity extends AppCompatActivity {
                 user_year_id = rad_year.getCheckedRadioButtonId();//selected radio button by user ID
                 user_rad_year = (RadioButton) findViewById(user_year_id); //getting the checked rad button from grp ID
                 user_year_select = user_rad_year.getText(); //text of selected radio button
+                user_yr = user_year_select.toString();
+
 
                     if (user_name.length() != 0 && isValid(user_email, user_phone))
                     {
+                        NewUser new_user = new NewUser(user_name, user_email, user_phone, user_yr , user_dept);
+                        dao.add(new_user).addOnSuccessListener(suc->{
+                                    Toast.makeText(FeedbackFormActivity.this, "Successful.", Toast.LENGTH_SHORT).show();
+                                }
+                                ).addOnFailureListener(er->{
+                            Toast.makeText(FeedbackFormActivity.this, "Try again.", Toast.LENGTH_SHORT).show();
+                        });
                             Intent intent2 = new Intent(FeedbackFormActivity.this, enterfb.class);
                             Toast.makeText(FeedbackFormActivity.this, "Welcome, " + user_name + "!", Toast.LENGTH_SHORT).show();
                             startActivity(intent2);
